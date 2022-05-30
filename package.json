@@ -2,7 +2,7 @@
   "name": "hardhat-project",
   "scripts": {
     "chain": "npx hardhat node",
-    "deploy": "hardhat run scripts/nft/deploy-contract.js",
+    "deploy": "hardhat run scripts/deploy.js",
     "test": "npx hardhat test"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "solidity-coverage": "^0.7.21"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.6.0"
+    "@openzeppelin/contracts": "^4.6.0",
+    "nft.storage": "^6.3.0"
   }
 }

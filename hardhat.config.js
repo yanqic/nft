@@ -15,7 +15,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-const { API, PRIVATE_KEY } = process.env;
+const { RINKEBY_URL, PRIVATE_KEY } = process.env;
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -28,12 +28,11 @@ module.exports = {
   networks: {
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
     },
     rinkeby: {
-      url: API,
-      accounts: [`0x${PRIVATE_KEY}`],
+      url: RINKEBY_URL,
+      accounts: [PRIVATE_KEY],
     },
   },
   gasReporter: {

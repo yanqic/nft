@@ -24,7 +24,7 @@ describe("NFT Auction", async function () {
     await auction.deployed();
     const price = ethers.utils.parseEther("0.0001");
 
-    const mintTx = await myNFT.addNFT(
+    const mintTx = await myNFT.mintNFT(
       addr1.address,
       "ipfs://bafyreic7tctlsccyl4hmenougvkkamqizucyybb5phpdkrzrk6njofljvm/metadata.json",
       price
